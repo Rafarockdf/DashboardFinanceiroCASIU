@@ -3,8 +3,8 @@ import pandas as pd
 import plotly.express as px
 #import plotly
 st.set_page_config(page_title='Relatório CASIU',layout='wide',page_icon='imagens/logo-casiu-png.png')
-dados = pd.read_csv('dados/dados_finais/dados_combinados.csv')
-calendario = pd.read_csv('dados/dados_finais/dados_calendario.csv')
+dados = pd.read_csv('https://github.com/Rafarockdf/DashboardFinanceiroCASIU/tree/main/dados/dados_finais/dados_combinados.csv')
+calendario = pd.read_csv('https://github.com/Rafarockdf/DashboardFinanceiroCASIU/tree/main/dados/dados_finais/dados_calendario.csv')
 ############ ETL ##################
 dados['vl_transacao'] = pd.to_numeric(dados['vl_transacao'], errors='coerce')
 dados['dt_transacao'] = pd.to_datetime(dados['dt_transacao'], format="%d-%m-%Y")
