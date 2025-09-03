@@ -1,10 +1,11 @@
 import streamlit as st 
 import pandas as pd
 import plotly.express as px
+import requests
 #import plotly
 st.set_page_config(page_title='Relatório CASIU',layout='wide',page_icon='imagens/logo-casiu-png.png')
-dados = pd.read_csv('https://github.com/Rafarockdf/DashboardFinanceiroCASIU/tree/main/dados/dados_finais/dados_combinados.csv')
-calendario = pd.read_csv('https://github.com/Rafarockdf/DashboardFinanceiroCASIU/tree/main/dados/dados_finais/dados_calendario.csv')
+dados = pd.read_csv('dados/dados_finais/dados_combinados.csv')
+calendario = pd.read_csv('dados/dados_finais/dados_calendario.csv')
 ############ ETL ##################
 dados['vl_transacao'] = pd.to_numeric(dados['vl_transacao'], errors='coerce')
 dados['dt_transacao'] = pd.to_datetime(dados['dt_transacao'], format="%d-%m-%Y")
@@ -59,19 +60,20 @@ with sidebar:
         "Selecione o Mês",
         options=lista_meses
     )
-    if mes_selecionado != 'Todos':
-        mask_meses = calendario_ordenado['mes_ano'] == mes_selecionado
-        data_min = calendario_ordenado[mask_meses]['data'].min()
-        data_max = calendario_ordenado[mask_meses]['data'].max()
-        
     
-    else:
-        data_min = calendario_ordenado['data'].min()
-        data_max = calendario_ordenado['data'].max()
-        faturamento_anterior = 0
-        lucro_anterior = 0
-        custo_anterior = 0
-        margem_lucro_anterior = 0
+    
+if mes_selecionado != 'Todos':
+    mask_meses = calendario_ordenado['mes_ano'] == mes_selecionado
+    data_min = calendario_ordenado[mask_meses]['data'].min()
+    data_max = calendario_ordenado[mask_meses]['data'].max()
+        
+else:
+    data_min = calendario_ordenado['data'].min()
+    data_max = calendario_ordenado['data'].max()
+    faturamento_anterior = 0
+    lucro_anterior = 0
+    custo_anterior = 0
+    margem_lucro_anterior = 0
         
         
 # Aplica a máscara ao DataFrame principal
