@@ -1,0 +1,11 @@
+[theme]
+
+primaryColor="#00A9E0" # Azul vibrante
+
+backgroundColor="#0c101c" # Azul bem escuro
+
+secondaryBackgroundColor="#1c2841"
+
+textColor="#FAFAFA" # Branco/cinza claro
+
+font="sans serif"
