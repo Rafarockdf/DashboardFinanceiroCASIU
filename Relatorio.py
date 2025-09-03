@@ -1,7 +1,7 @@
 import streamlit as st 
 import pandas as pd
 import plotly.express as px
-import requests
+
 #import plotly
 st.set_page_config(page_title='Relatório CASIU',layout='wide',page_icon='imagens/logo-casiu-png.png')
 dados = pd.read_csv('dados/dados_finais/dados_combinados.csv')
