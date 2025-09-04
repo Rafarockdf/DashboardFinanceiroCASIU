@@ -19,7 +19,7 @@ if lista_dfs:
     df_combinado = pd.concat(lista_dfs, ignore_index=True)
 
             # Salva o DataFrame combinado em um novo arquivo CSV
-    df_combinado.to_csv('../dados/dados_finais/dados_combinados.csv', index=False)
+    df_combinado.to_csv(r'C:\Users\rafam\Desktop\Relatórios_Casiu\dados\dados_finais\dados_combinados.csv', index=False)
 
     print("Arquivos CSV combinados com sucesso!")
     print("O arquivo combinado foi salvo como 'dados_combinados.csv'.")
