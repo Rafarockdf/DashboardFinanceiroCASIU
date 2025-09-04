@@ -159,6 +159,18 @@ fig_faturamento_por_categorias = px.bar(
 
 # 4. Seus ajustes de layout continuam os mesmos
 fig_faturamento_por_categorias.update_layout(
+    title={
+        'text': "📊 Faturamento por Categoria",  # título
+        'x': 0.5,  # centraliza
+        'xanchor': 'center',
+        'yanchor': 'top'
+    },
+    title_font=dict(size=24, color="white"),  # aumenta fonte
+    title_pad=dict(t=20),  # espaçamento superior
+    title_x=0.5, # Centraliza o título
+    font_family="Arial",
+    template="plotly_white", # Temas: "plotly_dark", "ggplot2", "seaborn", etc.
+    legend_title_text='Produtos' # Muda o título da legenda
     # ... (seu código de update_layout continua igual)
 )
 fig_faturamento_por_categorias.update_traces(texttemplate='R$ %{y:,.2f}', textposition='outside')
@@ -173,11 +185,11 @@ fig_faturamento_por_tempo = px.line(
     y='vl_transacao',
     
     # --- PERSONALIZAÇÃO PRINCIPAL ---
-    title="<b>Evolução das Vendas por Produto</b>",
+    title="<b>Faturamento Por Tempo</b>",
     
     labels={
         "dt_transacao": "Data da Venda",
-        "vl_transacao": "Valor da Venda (R$)"
+        "vl_transacao": "Faturamento (R$)"
     },
 
     markers=True # Adiciona marcadores (pontos) em cada ponto de dado na linha
@@ -188,6 +200,14 @@ fig_faturamento_por_tempo = px.line(
 # ==============================================================================
 
 fig_faturamento_por_tempo.update_layout(
+    title={
+        'text': "📊 Faturamento por Tempo",  # título
+        'x': 0.5,  # centraliza
+        'xanchor': 'center',
+        'yanchor': 'top'
+    },
+    title_font=dict(size=24, color="white"),  # aumenta fonte
+    title_pad=dict(t=20),  # espaçamento superior
     title_x=0.5, # Centraliza o título
     font_family="Arial",
     template="plotly_white", # Temas: "plotly_dark", "ggplot2", "seaborn", etc.
